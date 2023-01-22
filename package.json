@@ -1,7 +1,12 @@
 {
-  "name": "astro-landing-page",
+  "name": "mayor-aqua",
   "type": "module",
-  "version": "0.0.1",
+  "version": "0.0.2",
+  "author": {
+    "email": "klaustin.wijaya@gmail.com",
+    "name": "Klaustin",
+    "url": "https://chcoomilk.github.io/portfolio/"
+  },
   "private": true,
   "scripts": {
     "dev": "astro dev",

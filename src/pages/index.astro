@@ -5,7 +5,8 @@ import Features from "~/components/features.astro";
 import Footer from "~/components/footer.astro";
 import Header from "~/components/header.astro";
 import Intro from "~/components/intro.astro";
-import Showcase from "~/components/showcase.astro";
+import MayorAquarium from "~/components/mayor-aquarium.astro";
+import MayorExpedition from "~/components/mayor-expedition.astro";
 import Splash from "~/components/splash.astro";
 import "~/styles/index.css";
 
@@ -20,10 +21,14 @@ const description =
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width" />
-    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link
+      rel="icon"
+      href={import.meta.env.BASE_URL + "favicon.svg"}
+      type="image/svg+xml"
+    />
     <meta name="generator" content={generator} />
 
-    <title>Astro Landing Page</title>
+    <title>Mayor</title>
     <meta name="description" content={description} />
 
     <!-- social media -->
@@ -65,9 +70,10 @@ const description =
     <Splash />
     <div class="space-y-24 px-8 py-32">
       <Intro />
-      <Features />
-      <Compatibility />
-      <Showcase />
+      <!-- <Features />
+      <Compatibility /> -->
+      <MayorAquarium />
+      <MayorExpedition />
     </div>
     <Footer />
   </body>

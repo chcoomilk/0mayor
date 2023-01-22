@@ -1,18 +1,15 @@
 ---
-import { Picture } from "@astrojs/image/components";
 import { Icon } from "astro-icon";
-import astronautImage from "~/assets/astronaut.png";
 import HeroImage from "~/components/hero-image.astro";
-import Starfield from "~/components/starfield.astro";
+import Bubbles from "~/components/bubbles.astro";
 import GitHubCorner from "./github-corner.astro";
 
 const widths = [450, 800];
 const sizes = "(min-width: 640px) 42vw, 67vw";
 ---
 
-<section class="relative h-full bg-black">
-  <Starfield />
-  <GitHubCorner />
+<section class="relative h-full bg-gradient-to-b from-cyan-500 to-blue-900">
+  <Bubbles />
   <div id="splash-bg-fallback" class="absolute inset-0 hidden opacity-40">
     <HeroImage />
   </div>
@@ -20,27 +17,22 @@ const sizes = "(min-width: 640px) 42vw, 67vw";
     <h2
       class="flex flex-col gap-2 self-end sm:gap-4 sm:self-auto sm:justify-self-end"
     >
-      <Icon name="logomark" class="h-24 text-white md:h-32" />
       <div
         class="gradient-text text-center font-extrabold tracking-tighter text-8xl"
       >
-        Build fast
-        <br /> websites,
-        <br /> faster.
+        Mayor
+        <br /> Aqua
       </div>
     </h2>
     <div
-      id="astronaut"
-      class="w-2/3 max-w-3xl self-start sm:w-10/12 sm:self-auto sm:justify-self-start"
+      class="w-2/3 max-w-3xl h-1/2 mt-5 self-start sm:w-10/12 sm:self-auto sm:justify-self-center"
     >
-      <Picture
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1179.1967528983266!2d106.60166550656652!3d-6.220236758929199!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69fe9edbbb6c5b%3A0xd3e3a1d64097c9eb!2sMAYOR%20AQUARIUM!5e0!3m2!1sen!2sjp!4v1674373914511!5m2!1sen!2sjp"
         class="object-cover w-full h-full"
-        src={astronautImage}
-        widths={widths}
-        sizes={sizes}
-        loading="eager"
-        alt="A floating astronaut in a space suit"
-      />
+        allowfullscreen=""
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"></iframe>
     </div>
   </div>
 </section>

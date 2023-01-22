@@ -1,0 +1,27 @@
+---
+import ContentSection from "~/components/content-section.astro";
+import ShowcaseCard from "~/components/showcase-card.astro";
+import data from "~/data/mayor-aquarium.json";
+---
+
+<ContentSection title="Mayor Aquarium" id="mayor-aquarium">
+  <Fragment slot="lead">
+    Menjual berbagai jenis <span class="text-primary">ikan hias</span>,
+    kebutuhan pakan, dan tank <span class="text-primary">aquarium</span>.
+  </Fragment>
+  <div class="max-w-6xl space-y-2">
+    <div class="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
+      <!-- {sites.map((site) => <ShowcaseCard site={site} />)} -->
+      {
+        data.map((v) => (
+          <ShowcaseCard title={v.title} image_url={v.image} url={v.url} />
+        ))
+      }
+    </div>
+    <p class="text-right text-sm">
+      <a class="text-primary" href="https://tokopedia.com/mayor-aquarium">
+        ...and more &rarr;
+      </a>
+    </p>
+  </div>
+</ContentSection>

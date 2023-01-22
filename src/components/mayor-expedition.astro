@@ -1,0 +1,27 @@
+---
+import ContentSection from "~/components/content-section.astro";
+import ShowcaseCard from "~/components/showcase-card.astro";
+import data from "~/data/mayor-expedition.json";
+---
+
+<ContentSection title="Mayor Expedition" id="mayor-expedition">
+  <Fragment slot="lead">
+    Jasa expedisi barang dari <span class="text-primary">alat berat</span> dan bahan
+    bangunan. Mulai dari Rp. <span class="text-primary">199,000</span>
+  </Fragment>
+  <div class="max-w-6xl space-y-2">
+    <div class="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
+      <!-- {sites.map((site) => <ShowcaseCard site={site} />)} -->
+      {
+        data.map((v) => (
+          <ShowcaseCard title={v.title} image_url={v.image} url={v.url} />
+        ))
+      }
+    </div>
+    <p class="text-right text-sm">
+      <a class="text-primary" href="https://tokopedia.com/mayor-aqua">
+        ...and more &rarr;
+      </a>
+    </p>
+  </div>
+</ContentSection>

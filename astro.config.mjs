@@ -4,7 +4,12 @@ import { defineConfig } from "astro/config";
 
 // https://astro.build/config
 export default defineConfig({
-  site: "https://astro-moon-landing.netlify.app/",
+  site: "https://chcoomilk.github.io",
+  base: "/mayor-aqua",
+  server: {
+    host: process.env.HOST || "0.0.0.0",
+    port: +process.env.PORT || 3000,
+  },
   integrations: [
     tailwind(),
     image({
