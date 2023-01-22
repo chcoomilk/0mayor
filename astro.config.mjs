@@ -7,8 +7,7 @@ export default defineConfig({
   site: "https://chcoomilk.github.io",
   base: "/mayor-aqua",
   server: {
-    host: process.env.HOST || "0.0.0.0",
-    port: +process.env.PORT || 3000,
+    port: +process.env.PORT || undefined,
   },
   integrations: [
     tailwind(),
