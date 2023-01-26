@@ -1,6 +1,6 @@
 ---
 import HeroImage from "~/components/hero-image.astro";
-import Bubbles from "~/components/bubbles.astro";
+import Canvas from "~/components/canvas.astro";
 import MayorAquarium from "~/assets/mayor.png";
 import { Picture } from "@astrojs/image/components";
 import GoDown from "./go-down.astro";
@@ -10,7 +10,7 @@ const sizes = "(min-width: 640px) 42vw, 67vw";
 ---
 
 <section class="relative h-full bg-gradient-to-b from-cyan-500 to-blue-900">
-  <Bubbles />
+  <Canvas />
   <div id="splash-bg-fallback" class="absolute inset-0 hidden opacity-40">
     <HeroImage />
   </div>
