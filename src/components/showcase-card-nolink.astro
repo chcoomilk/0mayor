@@ -1,36 +1,27 @@
 ---
-import { Picture } from "@astrojs/image/components";
+import { Image } from "@astrojs/image/components";
 
-export interface Props {
-  title: string;
-  image_url: string | ImageMetadata;
-  url: string;
-}
+type Props = { src: ImageMetadata };
 
-const { url, image_url, title }: Props = Astro.props;
-
-const widths = [450, 800];
-const sizes = "(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw";
+const { src }: Props = Astro.props;
 ---
 
-<a class="group aspect-video hover:!text-default" href={url}>
+<div class="group aspect-video hover:!text-default">
   <figure class="relative h-full w-full overflow-hidden">
-    <Picture
+    <Image
       class="object-cover w-full h-full transition-all duration-300 bg-cover group-hover:scale-110 group-hover:opacity-20 group-focus:scale-110 group-focus:opacity-20"
-      src={image_url}
-      aspectRatio={16 / 9}
-      widths={widths}
-      sizes={sizes}
-      alt={`A screenshot of ${title}`}
+      title="Front Store"
+      alt="Front Store"
+      src={src}
     />
     <figcaption class="absolute inset-0">
       <div
         class="flex h-full flex-col items-center justify-center gap-2 opacity-0 transition-all duration-300 group-hover:opacity-100 group-focus:opacity-100"
       >
         <h3 class="text-center font-extrabold uppercase text-xl">
-          {title}
+          Front Store
         </h3>
       </div>
     </figcaption>
   </figure>
-</a>
+</div>

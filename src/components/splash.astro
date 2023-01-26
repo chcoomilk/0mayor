@@ -1,8 +1,9 @@
 ---
-import { Icon } from "astro-icon";
 import HeroImage from "~/components/hero-image.astro";
 import Bubbles from "~/components/bubbles.astro";
-import GitHubCorner from "./github-corner.astro";
+import MayorAquarium from "~/assets/mayor.png";
+import { Picture } from "@astrojs/image/components";
+import GoDown from "./go-down.astro";
 
 const widths = [450, 800];
 const sizes = "(min-width: 640px) 42vw, 67vw";
@@ -18,59 +19,33 @@ const sizes = "(min-width: 640px) 42vw, 67vw";
       class="flex flex-col gap-2 self-end sm:gap-4 sm:self-auto sm:justify-self-end"
     >
       <div
-        class="gradient-text text-center font-extrabold tracking-tighter text-8xl"
+        class="splash-text text-center font-extrabold tracking-tighter text-8xl"
       >
         Mayor
-        <br /> Aqua
+        <br /> Aquarium
+        <br /> &
+        <br /> Ekspedisi
       </div>
     </h2>
     <div
       class="w-2/3 max-w-3xl h-1/2 mt-5 self-start sm:w-10/12 sm:self-auto sm:justify-self-center"
     >
-      <iframe
-        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1179.1967528983266!2d106.60166550656652!3d-6.220236758929199!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69fe9edbbb6c5b%3A0xd3e3a1d64097c9eb!2sMAYOR%20AQUARIUM!5e0!3m2!1sen!2sjp!4v1674373914511!5m2!1sen!2sjp"
-        class="object-cover w-full h-full"
-        allowfullscreen=""
-        loading="lazy"
-        referrerpolicy="no-referrer-when-downgrade"></iframe>
+      <Picture
+        class="object-scale-down w-full h-full"
+        src={MayorAquarium}
+        widths={widths}
+        sizes={sizes}
+        loading="eager"
+        alt="A floating astronaut in a space suit"
+      />
     </div>
   </div>
+  <GoDown />
 </section>
 
-<noscript>
-  <style>
-    #splash-bg-fallback {
-      display: block;
-    }
-  </style>
-</noscript>
-
 <style>
-  @keyframes float {
-    0% {
-      transform: translate3d(0, 0, 0);
-    }
-
-    100% {
-      transform: translate3d(0, 30px, 0);
-    }
-  }
-
-  #astronaut {
-    animation: float linear 2.5s infinite alternate;
-  }
-
-  @media (prefers-reduced-motion: reduce) {
-    #astronaut {
-      @apply animate-none;
-    }
-
-    :global(#starfield) {
-      @apply hidden;
-    }
-
-    #splash-bg-fallback {
-      @apply block;
-    }
+  .splash-text {
+    @apply bg-clip-text text-transparent;
+    @apply bg-gradient-to-bl to-blue-300 from-blue-100;
   }
 </style>

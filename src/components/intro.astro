@@ -1,9 +1,20 @@
 ---
 import { Icon } from "astro-icon";
 import ContentSection from "~/components/content-section.astro";
+import FrontStoreImage from "~/assets/front_store.jpeg";
+import ShowcaseCardNolink from "./showcase-card-nolink.astro";
 ---
 
-<ContentSection title="Mayor Aqua" id="intro">
+<ContentSection title="Welcome" id="intro">
+  <div class="max-w-4xl grid grid-cols-1 gap-2 sm:grid-cols-2">
+    <ShowcaseCardNolink src={FrontStoreImage} />
+    <iframe
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1179.1967528983266!2d106.60166550656652!3d-6.220236758929199!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69fe9edbbb6c5b%3A0xd3e3a1d64097c9eb!2sMAYOR%20AQUARIUM!5e0!3m2!1sen!2sjp!4v1674373914511!5m2!1sen!2sjp"
+      class="object-cover w-full h-full mt-0"
+      allowfullscreen=""
+      loading="lazy"
+      referrerpolicy="no-referrer-when-downgrade"></iframe>
+  </div>
   <Fragment slot="lead">
     Toko ikan & jasa ekspidisi ada untuk Anda di
     <span class="text-primary">satu</span> tempat.
@@ -14,14 +25,14 @@ import ContentSection from "~/components/content-section.astro";
       class="flex items-center justify-center gap-3 border-2 border-current px-6 py-4"
     >
       <Icon pack="mdi" name="telephone" class="h-8" />
-      <span>Hubungi</span>
+      <span>Telepon</span>
     </a>
     <a
-      href="https://maps.app.goo.gl/rCHzAZrPzLzLmd6x5"
+      href="mailto:mayor.ekspedisi@gmail.com"
       class="flex items-center justify-center gap-3 border-2 border-current px-6 py-4"
     >
-      <Icon pack="mdi" name="map" class="h-8" />
-      <span>Lokasi</span>
+      <Icon pack="fe" name="mail" class="h-8" />
+      <span>Email</span>
     </a>
   </div>
 </ContentSection>

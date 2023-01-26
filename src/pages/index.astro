@@ -1,7 +1,5 @@
 ---
 import "@fontsource/inter/variable.css";
-import Compatibility from "~/components/compatibility.astro";
-import Features from "~/components/features.astro";
 import Footer from "~/components/footer.astro";
 import Header from "~/components/header.astro";
 import Intro from "~/components/intro.astro";
@@ -27,7 +25,7 @@ const description = "Toko ikan & jasa ekspidisi ada untuk Anda di satu tempat.";
     />
     <meta name="generator" content={generator} />
 
-    <title>Mayor Aqua</title>
+    <title>Mayor Aquarium & Ekspedisi</title>
     <meta name="description" content={description} />
 
     <!-- social media -->
@@ -40,7 +38,7 @@ const description = "Toko ikan & jasa ekspidisi ada untuk Anda di satu tempat.";
 
     <!-- initialize theme -->
     <script is:inline>
-      const themeSaved = localStorage.getItem("theme");
+      const themeSaved = localStorage.getItem("myrshdy-theme");
 
       if (themeSaved) {
         document.documentElement.dataset.theme = themeSaved;
@@ -54,7 +52,7 @@ const description = "Toko ikan & jasa ekspidisi ada untuk Anda di satu tempat.";
       window
         .matchMedia("(prefers-color-scheme: dark)")
         .addEventListener("change", (event) => {
-          if (!localStorage.getItem("theme")) {
+          if (!localStorage.getItem("myrshdy-theme")) {
             document.documentElement.dataset.theme = event.matches
               ? "dark"
               : "light";
@@ -63,14 +61,12 @@ const description = "Toko ikan & jasa ekspidisi ada untuk Anda di satu tempat.";
     </script>
   </head>
   <body
-    class="h-full overflow-x-hidden bg-default text-default text-base selection:bg-secondary selection:text-white"
+    class="h-full overflow-x-hidden bg-default text-default text-base selection:bg-secondary selection:text-white snap-y snap-mandatory"
   >
     <Header />
     <Splash />
     <div class="space-y-24 px-8 py-32">
       <Intro />
-      <!-- <Features />
-      <Compatibility /> -->
       <MayorAquarium />
       <MayorExpedition />
     </div>
